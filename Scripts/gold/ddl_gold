@@ -1,0 +1,105 @@
+
+/*
+===================
+DDL Script: Create 
+===================
+Script Purpose:
+    This script cre
+    The Gold layer 
+
+
+    Each view perfo
+    to produce a cl
+
+
+Usage:
+    - These views c
+===================
+*/
+
+
+-- ================
+-- Create Dimension
+-- ================
+IF OBJECT_ID('gold.
+    DROP VIEW gold.
+GO
+
+
+CREATE VIEW gold.di
+SELECT
+    ROW_NUMBER() OV
+    ci.cst_id      
+    ci.cst_key     
+    ci.cst_firstnam
+    ci.cst_lastname
+    la.cntry       
+    ci.cst_marital_
+    CASE 
+        WHEN ci.cst
+        ELSE COALES
+    END            
+    ca.bdate       
+    ci.cst_create_d
+FROM silver.crm_cus
+LEFT JOIN silver.er
+    ON ci.cst_key =
+LEFT JOIN silver.er
+    ON ci.cst_key =
+GO
+
+
+-- ================
+-- Create Dimension
+-- ================
+IF OBJECT_ID('gold.
+    DROP VIEW gold.
+GO
+
+
+CREATE VIEW gold.di
+SELECT
+    ROW_NUMBER() OV
+    pn.prd_id      
+    pn.prd_key     
+    pn.prd_nm      
+    pn.cat_id      
+    pc.cat         
+    pc.subcat      
+    pc.maintenance 
+    pn.prd_cost    
+    pn.prd_line    
+    pn.prd_start_dt
+FROM silver.crm_prd
+LEFT JOIN silver.er
+    ON pn.cat_id = 
+WHERE pn.prd_end_dt
+GO
+
+
+-- ================
+-- Create Fact Tabl
+-- ================
+IF OBJECT_ID('gold.
+    DROP VIEW gold.
+GO
+
+
+CREATE VIEW gold.fa
+SELECT
+    sd.sls_ord_num 
+    pr.product_key 
+    cu.customer_key
+    sd.sls_order_dt
+    sd.sls_ship_dt 
+    sd.sls_due_dt  
+    sd.sls_sales   
+    sd.sls_quantity
+    sd.sls_price   
+FROM silver.crm_sal
+LEFT JOIN gold.dim_
+    ON sd.sls_prd_k
+LEFT JOIN gold.dim_
+    ON sd.sls_cust_
+GO
+
