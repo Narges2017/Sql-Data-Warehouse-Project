@@ -28,23 +28,7 @@ This repository contains a complete **SQL Server-based Data Warehouse** built fr
 | **Silver**    | Cleansed & conformed data            | High             | Medium               |
 | **Gold**      | Business-ready dimensional model     | Business-grade   | High                 |
 
-## 📁 Repository Structure
-Sql-Data-Warehouse-Project/
-├── DataSets/                  # Sample source data
-│   ├── source_crm/
-│   └── source_erp/
-├── Scripts/
-│   ├── init_database.sql     # Database & schema creation
-│   ├── bronze/               # Raw data ingestion
-│   ├── sliver/               # Cleansing & transformation
-│   └── gold/                 # Dimensional model & aggregates
-├── docs/                     # Documentation & diagrams
-│   ├── data_architecture.png
-│   ├── data_flow.png
-│   ├── data_model.png
-│   └── ...
-├── tests/                    # Test scripts & validation
-└── README.md
+
 
 ## 🚀 Features
 
@@ -84,13 +68,13 @@ Data Flow
 Naming Conventions
 Data Catalog
 
-🤝 Contributing
-Contributions are welcome! Feel free to:
+## 🤝 Contributing
+- Contributions are welcome! Feel free to:
 
-Improve ETL performance
-Add more business metrics
-Enhance documentation
-Add Power BI / reporting examples
+- Improve ETL performance
+- Add more business metrics
+- Enhance documentation
+- Add Power BI / reporting examples
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+ ## 📄 License
+- This project is licensed under the MIT License - see the LICENSE file for details.
