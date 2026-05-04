@@ -61,7 +61,7 @@ This repository contains a complete **SQL Server-based Data Warehouse** built fr
    📊 Data Model
 (Add your data model diagram here)
 <img src="docs/data_model.png" alt="Data Model">
-📚 Documentation
+## 📚 Documentation
 
 Data Architecture
 Data Flow
